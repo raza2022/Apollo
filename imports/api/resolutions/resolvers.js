@@ -1,17 +1,23 @@
+import Resolutions from './resolutions';
+
+// Resolutions.insert({
+//     name: 'test'
+// })
+
+
 export default {
     Query: {
         resolutions(){
-            return [
-                {
-                    _id: "asdsfsdf",
-                    name: "Get staff done"
-                },
-                {
-                    _id: "fffffff",
-                    name: "Do something else"
-                }
+            return Resolutions.find({}).fetch();
+        }
+    },
 
-            ]
+    Mutation: {
+        createResolution(){
+            console.log("got here")
+            // const resolutionId = Resolutions.insert({
+            //     name: 'test1'
+            // })
         }
     }
 }
