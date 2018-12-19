@@ -10,6 +10,8 @@ const testSchema = `type Query {
     resolutions: [Resolution]
 }`;
 
+
+
 const typeDefs = [
     testSchema,
     ResolutionsSchema

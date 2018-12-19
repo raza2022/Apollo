@@ -11,7 +11,7 @@ const App = ({data}) => {
 
     return <div>
         <h1>{data.hi}</h1>
-        <ResolutionForm/>
+        <ResolutionForm refetch={data.refetch}/>
         <ul>
         {data.resolutions.map((resolution, i) => {
             return <li key={i}>{resolution.name}</li>
