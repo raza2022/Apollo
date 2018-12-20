@@ -7,8 +7,8 @@ import Resolutions from './resolutions';
 
 export default {
     Query: {
-        resolutions(){
-            return Resolutions.find({}).fetch();
+        resolutions(obj, args, { userId }){
+            return Resolutions.find({userId: userId}).fetch();
         }
     },
 
