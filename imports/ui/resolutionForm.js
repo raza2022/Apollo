@@ -19,8 +19,6 @@ class ResolutionForm extends Component {
             variables: {
                 name: this.name.value
             }
-        }).then(({data}) => {
-            this.props.refetch();
         }).catch(err => {
             console.log(err)
         });
@@ -36,5 +34,8 @@ class ResolutionForm extends Component {
 }
 
 export default graphql(createResolution, {
-    name: "createResolution"
+    name: "createResolution",
+    options: {
+        refetchQueries: ['Resolutions']
+    }
 })(ResolutionForm)
