@@ -10,7 +10,7 @@ import UserResolvers from '/imports/api/users/resolvers'
 
 import GoalsSchema from '../../api/goals/Goal.graphql';
 import GoalsResolvers from '/imports/api/goals/resolvers'
-//hiidsfs
+//hiidsfsfsfdsf
 
 
 

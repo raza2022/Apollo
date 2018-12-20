@@ -23,6 +23,17 @@ export default {
                 userId
             });
             return Resolutions.findOne(resolutionId)
+        },
+
+        toggleGoal(obj, { _id }){
+            const goal = Goals.findOne(_id);
+            Goals.update(_id, {
+                $set: {
+                    completed: !goal.completed
+                }
+            });
+            return Goals.findOne(_id)
         }
-    }
+    },
+
 }
