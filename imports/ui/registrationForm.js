@@ -10,9 +10,12 @@ export default class RegisterForm extends Component {
             email: this.email.value,
             password: this.password.value
         }, error => {
+            if(!error){
+                this.props.client.resetStore();
+            }
             console.log(error)
         })
-    }
+    };
     render() {
         return (
             <form onSubmit={this.registerUser}>
