@@ -13,6 +13,12 @@ export default {
           return Goals.find({
               resolutionId: resolution._id
           }).fetch();
+      },
+      completed: (resolution) => {
+          return !Goals.findOne({
+              resolutionId: resolution._id,
+              completed: false
+          })
       }
     },
 
@@ -20,7 +26,8 @@ export default {
         createResolution(obj, { name }, { userId }){
             const resolutionId = Resolutions.insert({
                 name,
-                userId
+                userId,
+                completed: false
             });
             return Resolutions.findOne(resolutionId)
         },
