@@ -25,23 +25,24 @@ const App = ({loading, resolutions, client, user }) => {
             </div>}
 
 
-        <ResolutionForm />
-        <ul>
-        {resolutions.map((resolution, i) => {
-            return <li key={resolution._id} >
+        {user._id && <ResolutionForm />}
+        {user._id && <ul>
+            {resolutions.map((resolution, i) => {
+                return <li key={resolution._id}>
                 <span style={{
-                    textDecoration:  resolution.completed ? "line-through" : "none"
+                    textDecoration: resolution.completed ? "line-through" : "none"
                 }}>{resolution.name}</span>
-                <ul>
-                    {resolution.goals.map((goal)=>{
-                        return <Goal goal={goal} key={goal._id} />
-                    })}
-                </ul>
-                <GoalForm resolutionId={resolution._id}/>
+                    <ul>
+                        {resolution.goals.map((goal) => {
+                            return <Goal goal={goal} key={goal._id}/>
+                        })}
+                    </ul>
+                    <GoalForm resolutionId={resolution._id}/>
                 </li>
-        })
-        }
+            })
+            }
         </ul>
+        }
     </div>
 };
 

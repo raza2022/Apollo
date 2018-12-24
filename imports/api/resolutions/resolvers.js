@@ -15,21 +15,29 @@ export default {
           }).fetch();
       },
       completed: (resolution) => {
-          return !Goals.findOne({
+          const goals = Goals.find({
               resolutionId: resolution._id,
-              completed: false
-          })
+          }).fetch();
+
+          const completedGoals = goals.filter((goal) => goal.completed);
+
+          if(!goals.length) return false;
+          return goals.length === completedGoals.length
       }
     },
 
     Mutation: {
         createResolution(obj, { name }, { userId }){
-            const resolutionId = Resolutions.insert({
-                name,
-                userId,
-                completed: false
-            });
-            return Resolutions.findOne(resolutionId)
+            if(userId){
+                const resolutionId = Resolutions.insert({
+                    name,
+                    userId,
+                    completed: false
+                });
+                return Resolutions.findOne(resolutionId)
+            }
+            throw new Error("Unauthorized")
+
         },
 
         toggleGoal(obj, { _id }){
