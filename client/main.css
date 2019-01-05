@@ -1,0 +1,41 @@
+.main-body{
+    background: #fafafa;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 29px;
+    font-size: 16px !important;
+}
+
+.auth-container{
+    padding:35px;
+    background: yellow;
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px 0 #cecece;
+}
+
+.app{
+    height: 100vh;
+    position: relative;
+}
+
+input{
+    padding: 10px 15px;
+    margin: 5px 0 5px;
+    border-radius: 9px;
+    border: 1px solid black;
+}
+
+button{
+    background: black;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 8px;
+    border: 0;
+    margin: 5px
+}

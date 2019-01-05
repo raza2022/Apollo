@@ -13,15 +13,15 @@ import Goal from './resolutions/Goal';
 const App = ({loading, resolutions, client, user }) => {
     if(loading) return null;
 
-    return <div>
+    return <div className="auth-container">
         {user._id ? <button onClick={() => {
                 Meteor.logout();
                 client.resetStore();
             }}>logout</button>
 
          : <div>
-                <RegistrationForm client={client}/>
                 <LoginForm client={client}/>
+                <RegistrationForm client={client}/>
             </div>}
 
 

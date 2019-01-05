@@ -19,7 +19,7 @@ export default class RegisterForm extends Component {
     render() {
         return (
             <form onSubmit={this.registerUser}>
-                <input type="email" ref={input => (this.email = input)}/>
+                <input type="email" ref={input => (this.email = input)} />
                 <input type="password" ref={input => (this.password = input)}/>
                 <button type="submit">Register</button>
             </form>
